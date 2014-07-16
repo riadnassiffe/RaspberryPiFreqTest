@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 	int i;
 	struct timespec startCpuTime, stopCpuTime, startTotalTime, stopTotalTime;
 
-	clock_gettime(CLOCK_MONOTONIC, &startTotalTime);	
 	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &startCpuTime);
 	        
 
@@ -26,7 +25,6 @@ int main(int argc, char *argv[])
 
 
 	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &stopCpuTime);
-	clock_gettime(CLOCK_MONOTONIC, &stopTotalTime);    	
 
 	double cpuUsedTime = ((double) (stopCpuTime.tv_sec - startCpuTime.tv_sec)
 			+ (stopCpuTime.tv_nsec - startCpuTime.tv_nsec)
